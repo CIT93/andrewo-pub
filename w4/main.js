@@ -42,7 +42,13 @@ function start(houseHoldMembers, houseSize) {
 }
 
 function displayOutput() {
-
+  for (arr of cfpData) {
+    console.log(arr)
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    newP.textContent = `If the size of my household is ${arr[0]}, and the size of my home is ${arr[1]}, then the Carbon Footprint total is ${arr[4]}`;
+    output.appendChild(newP)
+  }
 }
 
 start(1, "apt");
