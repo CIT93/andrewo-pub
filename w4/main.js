@@ -46,7 +46,7 @@ function displayOutput() {
     console.log(arr)
     const output = document.getElementById("output");
     const newP = document.createElement("p");
-    newP.textContent = `If the size of my household is ${arr[0]}, and the size of my home is ${arr[1]}, then the Carbon Footprint total is ${arr[4]}`;
+    newP.textContent = `If the size of my household is ${arr[0]}, then I will add ${arr[2]} points. If the size of my home is ${arr[1]}, then I will add ${arr[3]} points. This will make the Carbon Footprint total is ${arr[4]}.`;
     output.appendChild(newP)
   }
 }
