@@ -51,6 +51,7 @@ function displayOutput() {
   }
 }
 
+
 start(1, "apt");
 start(2, "apt");
 start(3, "apt");
