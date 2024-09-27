@@ -1,5 +1,8 @@
+import { renderTbl } from "./render.js";
+// it says we can not use an import statement outside of a render, so maybe this statement should be in the render file?
 const FORM = document.getElementById("form");
 const OUTPUT = document.getElementById("output");
+
 const cfpData = [];
 
 function determineHouseSizePts(size) {
@@ -51,20 +54,6 @@ function start(first, last, houseHoldMembers, houseSize) {
     });
 }
 
-function displayOutput() {
-  for (obj of cfpData) {
-   const newH2 = document.createElement("h2");
-   newH2.textContent = `${obj.firstName} ${obj.lastName}'s Carbon Footprint is ${obj.cfpTotal}`;
-   const newH3 = document.createElement("h3");
-   newH3.textContent = `Based on number in and size of home for ${obj.firstName} ${obj.lastName}`
-   const newP = document.createElement("p");
-   newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}),`;
-   newP.textContent += ` and a ${obj.houseS} size of home (score:${obj.houseSPTS}).`;
-   OUTPUT.appendChild(newH2);
-   OUTPUT.appendChild(newH3);
-   OUTPUT.appendChild(newP);
- }
-}
   
 FORM.addEventListener('submit', function(e){
   e.preventDefault();
@@ -74,7 +63,8 @@ FORM.addEventListener('submit', function(e){
   const houseSize = FORM.houses.value;
   start(firstName, lastName, houseMembers, houseSize);
   OUTPUT.innerHTML = "";
-  displayOutput(firstName, lastName);
-FORM.reset();
+  //displayOutput();
+  renderTbl(cfpData);
+  FORM.reset();
 })
 
