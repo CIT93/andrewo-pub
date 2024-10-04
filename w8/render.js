@@ -1,4 +1,5 @@
 const TBL = document.getElementById("tab-data");
+const FORM = document.getElementById("form");
 
 function renderTblHeading () {
   TBL.innerHTML = ""
@@ -29,10 +30,18 @@ function renderTblHeading () {
       console.log(e);
       data.splice(index, 1);
       renderTbl(data);
-    })
+    });
     btnEdit.addEventListener('click', function(e){
+      const entry = data[index];
+      FORM.firstname.value = entry.firstName;
+      FORM.lastname.value = entry.lastName;
+      FORM.housem.value = entry.houseM;
+      FORM.houses.value = entry.houseS;
+      data.splice(index, 1);
+      renderTbl(data);
+      });
       
-    }
+    //})
     return td;
   }
 
@@ -56,10 +65,13 @@ function renderTblHeading () {
   }
   
   function renderTbl(data){
+    TBL.innerHTML = "";
+    if (data.length > 0) {
     const table = renderTblHeading();
     const tbody = renderTblBody(data);
     table.appendChild(tbody);
     TBL.appendChild(table);
+    }
   }
 
   export {renderTbl};
