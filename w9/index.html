@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="main.js"></script>
+    <title>Week 9 - Carbon Footprint - Pub</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <fieldset>
+        <legend>Calculating Your Carbon Footprint Points</legend>
+        <div>
+          <label for = "firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstname" maxlength="35" />
+          <span id="firstNameError" class="error" role="alert"></span>
+        </div>
+        <div>
+          <label for="lastName">Last Name:</label>
+          <input type="text" id="lastName" name="lastname" maxlength="25" />
+          <span id="lastNameError" class="error" role="alert"></span>
+        </div>
+        <div>
+          <label>Count the members of your household</label>
+          <input type="number" name="housem" min="1" max="6" required />
+        </div>
+        <div>
+          <label>Consider the size of your home</label>
+          <!-- <input type="text" name="houses" required/> -->
+          <select name="houses" required>
+            <option value="">---Please enter size of home---</option>
+            <option value="apt">Apartment</option>
+            <option value="large">Large</option>
+            <option value="medium">Medium</option>
+            <option value="small">Small</option>
+          </select>
+        </div>
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+    <div id="error" class="error"></div>
+    <script>
+      function validateField (event) {
+        const field = event.target.value;
+        const fieldId = event.target.id;
+        const fieldError = document.getElementById(`${fieldId}Error`);
+
+        if (field === '') {
+          fieldError.textContent = `${fieldId} is required`;
+          event.target.classList.add('invalid');
+        } else {
+          fieldError.textContent = '';
+          event.target.classList.remove('invalid');
+        }
+      }
+
+      document.getElementById('firstName').addEventListener('blur', validateField);
+      document.getElementById('lastName').addEventListener('blur', validateField);
+
+      document.getElementById('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const firstNameIsValid = document.getElementById('firstName').value !== '';
+        const lastNameIsValid = document.getElementById('lastName').value !== '';
+        if (firstNameIsValid && lastNameIsValid) {
+        }
+      })
+    </script>
+    <!-- <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>HouseHold</th>
+          <th>House Size</th>
+          <th>Carbon Footprint</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>Andrew</td>
+            <td>3</td>
+            <td>Large</td>
+            <td>20</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button></td>
+        </tr>
+        <tr>
+            <td>Andrew</td>
+            <td>3</td>
+            <td>Large</td>
+            <td>20</td>
+            <td>
+                <button>Edit</button>
+                <button>Delete</button></td>
+        </tr>
+      </tbody>
+    </table> -->
+  </body>
+</html>
