@@ -6,11 +6,7 @@
     <script type="module" src="main.js"></script>
     <title>Week 9 - Carbon Footprint - Pub</title>
     <link rel="stylesheet" href="style.css" />
-    <style>
-      .error {
-        color: red;
-      }
-    </style>
+    <style></style>
   </head>
   <body>
     <form id="form">
@@ -18,13 +14,13 @@
         <legend>Calculating Your Carbon Footprint Points</legend>
         <div>
           <label for = "firstName">First Name:</label>
-          <input type="text" id="firstName" name="firstname" maxlength="35" />
-          <span id="firstNameError" class="error" role="alert"></span>
+          <input type="text" id="firstName" name="firstname" maxlength="25"/>
+          <span id="firstNameError" class="error"></span>
         </div>
         <div>
           <label for="lastName">Last Name:</label>
-          <input type="text" id="lastName" name="lastname" maxlength="25" />
-          <span id="lastNameError" class="error" role="alert"></span>
+          <input type="text" id="lastName" name="lastname" maxlength="25"/>
+          <span id="lastNameError" class="error"></span>
         </div>
         <div>
           <label>Count the members of your household</label>
@@ -41,38 +37,13 @@
             <option value="small">Small</option>
           </select>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit</button><br>
+        <span id="submitError" class="error"></span>
       </fieldset>
     </form>
     <div id="output"></div>
     <div id="tab-data"></div>
     <div id="error" class="error"></div>
-    <script>
-      function validateField (event) {
-        const field = event.target.value;
-        const fieldId = event.target.id;
-        const fieldError = document.getElementById(`${fieldId}Error`);
-
-        if (field === '') {
-          fieldError.textContent = `${fieldId} is required`;
-          event.target.classList.add('invalid');
-        } else {
-          fieldError.textContent = '';
-          event.target.classList.remove('invalid');
-        }
-      }
-
-      document.getElementById('firstName').addEventListener('blur', validateField);
-      document.getElementById('lastName').addEventListener('blur', validateField);
-
-      document.getElementById('form').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const firstNameIsValid = document.getElementById('firstName').value !== '';
-        const lastNameIsValid = document.getElementById('lastName').value !== '';
-        if (firstNameIsValid && lastNameIsValid) {
-        }
-      })
-    </script>
     <!-- <table>
       <thead>
         <tr>
