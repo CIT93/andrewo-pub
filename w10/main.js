@@ -3,15 +3,30 @@ import {determineHouseHoldPts, determineHouseSizePts} from "./cfp.js";
 import {FORM, FNAME, LNAME, SUBMIT} from "./global.js";
 import {saveLS, cfpData} from "./storage.js";
 
-const start = (first, last, houseHoldMembers, houseSize) => {
-  const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
-  const houseSizePts = determineHouseSizePts(houseSize);
+// const start = (first, last, houseHoldMembers, houseSize) => {
+//   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
+//   const houseSizePts = determineHouseSizePts(houseSize);
+//   const total = houseHoldPTS + houseSizePts;
+//   cfpData.push({
+//     firstName: first,
+//     lastName: last,
+//     houseM: houseHoldMembers,
+//     houseS: houseSize, 
+//     houseMPTS: houseHoldPTS,
+//     houseSPTS: houseSizePts,
+//     cfpTotal: total,
+//     });
+// }
+
+const start = (...i) => {
+  const houseHoldPTS = determineHouseHoldPts(i[2]);
+  const houseSizePts = determineHouseSizePts(i[3]);
   const total = houseHoldPTS + houseSizePts;
   cfpData.push({
-    firstName: first,
-    lastName: last,
-    houseM: houseHoldMembers,
-    houseS: houseSize, 
+    firstName: i[0],
+    lastName: i[1],
+    houseM: i[2],
+    houseS: i[3], 
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePts,
     cfpTotal: total,
