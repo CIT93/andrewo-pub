@@ -50,7 +50,7 @@ const renderTblHeading = () => {
     data.forEach((obj, index) => {
       const tr = document.createElement("tr");
       for(const [key, value] of Object.entries(obj)){
-        if (key !== "last" && key !== "houseHoldPoints" && key !== "houseSizePoints" && key !== "foodChoicePoints"){
+        if (key !== "last" && key !== "houseHoldPoints" && key !== "houseSizePoints" && key !== "foodPoints"){
           const td = document.createElement("td");
           td.textContent = value;
           tr.appendChild(td);
