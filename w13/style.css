@@ -1,0 +1,29 @@
+html {
+    font-size: 22px;
+}
+body {
+    font-family: tahoma;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh;
+    margin: 0; */
+    background-color: #238;
+    color: white;
+}
+form-div {
+    margin-bottom: 1rem;
+}
+input:in-range {
+    background-color: white;
+}
+input:out-of-range {
+    background-color: green
+}
+button {
+    padding: 0.1rem 0.1rem;
+    font-size: 0.75rem;
+    font-family: Tahoma;
+    cursor: pointer;
+}

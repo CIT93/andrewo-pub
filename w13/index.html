@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 13 Code Challenge Discussion</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+</head>
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>Time to get FIT!</legend>
+            <div>
+                <label for="exercise">Type of Exercise</label>
+                <select id="exercise" name="exercise" required>
+                    <option value="">---Please Select---</option>
+                    <option value="pullUps">Pull-Ups</option>
+                    <option value="pushUps">Push-Ups</option>
+                    <option value="sitUps">Sit-Ups</option>
+                </select>
+            </div>
+            <div>
+                <label for="reps">Target Number of Reps</label>
+                <input type="number" name="reps" id="reps" min="1" max="5" required />
+            </div>
+            <div>
+                <label for="timeSeconds">Time in Seconds</label>
+                <select id="timeSeconds" name="timeSeconds" required>
+                    <option value="">---Please Select---</option>
+                    <option value="30">:30</option>
+                    <option value="60">:60</option>
+                    <option value="90">:90</option>
+                </select>
+            </div>
+            <div class="button-container">
+                <span class="button-text">Get Ready</span>
+                <button type="submit">Submit</button>
+            </div>
+            <span id="submitError" class="error"></span>
+        </fieldset>
+    </form>
+    <h2>Submit to start!</h2>
+    <div id="output"></div>
+</body>
+</html>
