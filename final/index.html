@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title>Fast or Feast - Final Step</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id = "form">
+        <fieldset>
+            <legend>Is It Time To Fast, or Feast?</legend>
+            <div>
+                <label>Name:</label>
+                <input type="text" id="name" name="name" maxlength="25"/>
+                <span id="nameError" class="error"></span>
+            </div>
+            <div>
+                <label>Select Day:</label>
+                <select name="day" required>
+                    <option value="">---Please select day of the week---</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+            </div>
+            <div>
+                <label>Select the Current Hour (0-23):</label>
+                <input type="number" name="time" min="0" max="24" required />
+            </div>
+            <button type="submit">Submit</button><br>
+            <span id="submitError" class="error"></span>
+        </fieldset>
+    </form>
+    <button id="clearAll">Clear All</button>
+    <div id="output"></div>
+    <div id="tab-data"></div>
+    <div id="error" class="error"></div>
+    <hr>
+</body>
+</html>
