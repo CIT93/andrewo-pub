@@ -1,0 +1,1 @@
+I would try to implement checkboxes, that when a user selects one of the checkboxes, it adds 4 points to the waste total. I have not implemented a checkbox yet, so I am not sure exactly how it would work in the code. But that will be my approach. 
